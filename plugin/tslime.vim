@@ -25,8 +25,8 @@ function! Send_to_Tmux(text)
     call <SID>Tmux_Vars()
   endif
 
-  call system("tmux load-buffer -", a:text)
-  call system("tmux paste-buffer -d -t " . s:tmux_target())
+  call system("tmux load-buffer -b tslime -", a:text)
+  call system("tmux paste-buffer -d -b tslime -t " . s:tmux_target())
 endfunction
 
 function! s:tmux_target()
