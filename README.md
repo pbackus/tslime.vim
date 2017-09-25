@@ -1,36 +1,38 @@
 tslime.vim
 ==========
 
-This is a simple vim script to send portion of text from a vim buffer to a
+This is a simple vim script to send portions of text from a vim buffer to a
 running tmux session.
 
-It is based on slime.vim http://technotales.wordpress.com/2007/10/03/like-slime-for-vim/,
-but use tmux instead of screen. However, compared to tmux, screen doesn't
-have the notion of panes. So, the script was adapted to take panes into
-account.
+It is based on
+[slime.vim](http://technotales.wordpress.com/2007/10/03/like-slime-for-vim/),
+but uses tmux instead of screen. However, unlike tmux, screen doesn't have
+a notion of panes. This script has been adapted to take panes into account.
 
-**Note:** If you use version of tmux earlier than 1.3, you should use the stable
-branch. The version available in that branch isn't aware of panes so it
+**Note:** If you use a version of tmux earlier than 1.3, you should use the
+stable branch. The version available in that branch isn't aware of panes so it
 will paste to pane 0 of the window.
 
 Settings
 --------
 
-You can tell tslime.vim to use the current session and current window, this let's you 
-avoid specifying this on every upstart of vim.
+You can tell tslime.vim to use the current session and current window; this
+let's you avoid specifying this on every upstart of vim.
 
+```vim
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+```
 
-These are disabled by default, meaning you will have the ability to choose from every 
-session/window/pane combination.
+These are disabled by default, meaning you will have the ability to choose from
+every session/window/pane combination.
 
 Setting Keybindings
 -------------------
 
-In this fork of tslime.vim, keybindings are not set automatically
-for you. Instead, you can map whatever you'd like to one of the
-plugin-specific bindings in your `.vimrc` file.
+In this fork of tslime.vim, keybindings are not set automatically for you.
+Instead, you can map whatever you'd like to one of the plugin-specific bindings
+in your `.vimrc` file.
 
 To get the old defaults, put the following in your `.vimrc`:
 
