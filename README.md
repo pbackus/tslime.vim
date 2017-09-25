@@ -52,6 +52,12 @@ To grab the current method that a cursor is in normal mode, set the following:
 nmap <your_key_combo> <Plug>NormalModeSendToTmux
 ```
 
+To send any text object or motion to tmux from normal mode, set the following:
+
+```vim
+nmap <your_key_combo> <Plug>TslimeOperator
+```
+
 Use the following to reset the session, window, and pane info:
 
 ``` vim
