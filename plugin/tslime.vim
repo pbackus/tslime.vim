@@ -131,7 +131,7 @@ endfunction
 
 xnoremap <silent> <Plug>SendSelectionToTmux "ry :call Send_to_Tmux(@r)<CR>
 nmap     <silent> <Plug>NormalModeSendToTmux vip <Plug>SendSelectionToTmux
-nnoremap          <Plug>TslimeOperator :set operatorfunc=<SID>TslimeOperator<CR>g@
+nnoremap <silent> <Plug>TslimeOperator :set operatorfunc=<SID>TslimeOperator<CR>g@
 
 nnoremap          <Plug>SetTmuxVars :call <SID>Tmux_Vars()<CR>
 
