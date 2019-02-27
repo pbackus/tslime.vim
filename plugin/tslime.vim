@@ -134,5 +134,6 @@ nmap     <silent> <Plug>NormalModeSendToTmux vip <Plug>SendSelectionToTmux
 nnoremap <silent> <Plug>TslimeOperator :set operatorfunc=<SID>TslimeOperator<CR>g@
 
 nnoremap          <Plug>SetTmuxVars :call <SID>Tmux_Vars()<CR>
+command! SetTmuxVars call <SID>Tmux_Vars()
 
 command! -nargs=* Tmux call Send_to_Tmux('<Args><CR>')
