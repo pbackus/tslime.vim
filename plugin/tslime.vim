@@ -8,16 +8,6 @@ endif
 
 let g:loaded_tslime = 1
 
-" Function to send keys to tmux
-" useful if you want to stop some command with <c-c> in tmux.
-function! Send_keys_to_Tmux(keys)
-  if !exists("g:tslime")
-    call <SID>Tmux_Vars()
-  endif
-
-  call system("tmux send-keys -t " . s:tmux_target() . " " . a:keys)
-endfunction
-
 " Main function.
 " Use it in your script if you want to send text to a tmux session.
 function! Send_to_Tmux(text)
@@ -31,15 +21,6 @@ endfunction
 
 function! s:tmux_target()
   return '"' . g:tslime['session'] . '":' . g:tslime['window'] . "." . g:tslime['pane']
-endfunction
-
-function! s:set_tmux_buffer(text)
-  let buf = substitute(a:text, "'", "\\'", 'g')
-  call system("tmux load-buffer -", buf)
-endfunction
-
-function! SendToTmux(text)
-  call Send_to_Tmux(a:text)
 endfunction
 
 " Session completion
