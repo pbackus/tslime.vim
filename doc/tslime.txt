@@ -1,0 +1,49 @@
+*tslime.txt*  Plugin to send text from Vim to a running tmux session
+
+INTRODUCTION                                            *tslime*
+
+This plugin allows you to easily copy text from a Vim buffer into a pane in a
+running tmux session. It can be used to communicate with a shell, interactive
+interpreter, or REPL.
+
+Before sending text to tmux for the first time, you will be prompted to select a
+target session, window, and pane. From then on, all text sent to tmux will go to
+that target automatically. You can use a mapping or a command to select a new
+target.
+
+MAPPINGS                                                *tslime-mappings*
+
+This fork of tslime does not provide default mappings. Instead, it defines
+the following |<Plug>| mappings:
+
+  <Plug>SendSelectionToTmux
+                        Sends the current visual-mode selection to tmux.
+
+  <Plug>NormalModeSendToTmux
+                        Sends the paragraph under the cursor to tmux.
+
+  <Plug>TslimeOperator{motion}
+                        Sends the text covered by {motion} to tmux.
+  <Plug>SetTmuxVars
+                        Prompts for a new target session, window, and pane.
+
+COMMANDS                                                *tslime-commands*
+
+                                                        *:SetTmuxVars*
+:SetTmuxVars            Prompts for a new target session, window, and pane.
+
+                                                        *:Tmux*
+:Tmux {text}            Sends {text} to tmux, followed by a <CR>.
+
+OPTIONS
+
+You can set the following global variables in your |vimrc| to make selecting
+targets easier:
+
+*g:tslime_always_current_session*
+                        When selecting a target, always choose the current
+                        tmux session without prompting.
+
+*g:tslime_always_current_window*
+                        When selecting a target, always choose the current
+                        tmux window without prompting.
