@@ -129,7 +129,7 @@ function! s:TslimeOperator(motion_type)
   let @@ = reg_save
 endfunction
 
-vnoremap <silent> <Plug>SendSelectionToTmux "ry :call Send_to_Tmux(@r)<CR>
+xnoremap <silent> <Plug>SendSelectionToTmux "ry :call Send_to_Tmux(@r)<CR>
 nmap     <silent> <Plug>NormalModeSendToTmux vip <Plug>SendSelectionToTmux
 nnoremap          <Plug>TslimeOperator :set operatorfunc=<SID>TslimeOperator<CR>g@
 
