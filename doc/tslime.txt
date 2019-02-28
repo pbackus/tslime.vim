@@ -21,6 +21,15 @@ the following |<Plug>| mappings:
 
 <Plug>(TslimeOperator){motion}
                         Sends the text covered by {motion} to tmux.
+
+                                                        *tslime-mappings-example*
+To use these, you will need to create your own mappings for them. For example,
+to use "\t" to send text to tmux in both visual and normal mode, you can use
+the following mappings: >
+
+   xmap \t <Plug>(TslimeSendSelection)
+   nmap \t <Plug>(TslimeOperator)
+
 COMMANDS                                                *tslime-commands*
 
                                                         *:TslimeSetTarget*
