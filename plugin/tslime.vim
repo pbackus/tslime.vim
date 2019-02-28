@@ -15,7 +15,9 @@ function! Send_to_Tmux(text)
     call <SID>Tmux_Vars()
   endif
 
-  call system("tmux load-buffer -b tslime -", a:text)
+  let add_newline = exists("g:tslime_ensure_newline") && (a:text[-1:] != "\n")
+
+  call system("tmux load-buffer -b tslime -", a:text . (add_newline ? "\n" : ""))
   call system("tmux paste-buffer -d -b tslime -t " . s:tmux_target())
 endfunction
 

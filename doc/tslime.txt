@@ -50,3 +50,11 @@ targets easier:
 *g:tslime_always_current_window*
                         When selecting a target, always choose the current
                         tmux window without prompting.
+
+                                                        *g:tslime_ensure_newline*
+When sending text selected by a |characterwise| motion or text object, the
+trailing newline may be omitted. This can cause problems when sending text to
+a shell or REPL that expects a trailing newline after each command. To ensure
+a trailing newline is always sent, add the following line to your vimrc: >
+
+   let g:tslime_ensure_newline = 1
