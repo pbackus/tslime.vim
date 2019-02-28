@@ -32,7 +32,7 @@ the following mappings: >
 
 COMMANDS                                                *tslime-commands*
 
-                                                        *:TslimeSend:*
+                                                        *:TslimeSend*
 :[range]TslimeSend      Send the current buffer to tmux. With [range], send
                         only the specified lines.
                                                         *:TslimeChooseTarget*
