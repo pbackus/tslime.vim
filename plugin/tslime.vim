@@ -109,7 +109,7 @@ function! s:Tmux_Vars()
   endif
 endfunction
 
-" Based on the example in ':help :map-operator'
+" Send text from a motion or text object
 function! s:TslimeOperator(motion_type)
   let sel_save = &selection
   let &selection = "inclusive"
