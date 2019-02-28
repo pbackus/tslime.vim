@@ -16,16 +16,16 @@ MAPPINGS                                                *tslime-mappings*
 This fork of tslime does not provide default mappings. Instead, it defines
 the following |<Plug>| mappings:
 
-  <Plug>SendSelectionToTmux
+<Plug>SendSelectionToTmux
                         Sends the current visual-mode selection to tmux.
 
-  <Plug>NormalModeSendToTmux
+<Plug>NormalModeSendToTmux
                         Sends the paragraph under the cursor to tmux.
 
-  <Plug>TslimeOperator{motion}
+<Plug>TslimeOperator{motion}
                         Sends the text covered by {motion} to tmux.
-  <Plug>SetTmuxVars
-                        Prompts for a new target session, window, and pane.
+
+<Plug>SetTmuxVars       Prompts for a new target session, window, and pane.
 
 COMMANDS                                                *tslime-commands*
 
@@ -35,7 +35,7 @@ COMMANDS                                                *tslime-commands*
                                                         *:Tmux*
 :Tmux {text}            Sends {text} to tmux, followed by a <CR>.
 
-OPTIONS
+OPTIONS                                                 *tslime-options*
 
 You can set the following global variables in your |vimrc| to make selecting
 targets easier:
