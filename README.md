@@ -1,17 +1,15 @@
 tslime.vim
 ==========
 
-This is a simple vim script to send portions of text from a vim buffer to a
-running tmux session.
+⚠️ WARNING: This fork of tslime is not compatible with other versions!
 
-It is based on
-[slime.vim](http://technotales.wordpress.com/2007/10/03/like-slime-for-vim/),
-but uses tmux instead of screen. However, unlike tmux, screen doesn't have
-a notion of panes. This script has been adapted to take panes into account.
+`tslime.vim` allows you to easily copy text from a Vim buffer into a pane in a
+running tmux session. It can be used to communicate with a shell, interactive
+interpreter, or REPL.
 
-**Note:** If you use a version of tmux earlier than 1.3, you should use the
-stable branch. The version available in that branch isn't aware of panes so it
-will paste to pane 0 of the window.
+Basic functionality is documented below. Documentation is also available
+through Vim's help system; use `:help tslime` after generating help tags (your
+plugin manager may do so automatically).
 
 Settings
 --------
@@ -34,43 +32,21 @@ In this fork of tslime.vim, keybindings are not set automatically for you.
 Instead, you can map whatever you'd like to one of the plugin-specific bindings
 in your `.vimrc` file.
 
-To get the old defaults, put the following in your `.vimrc`:
-
-``` vim
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuxVars
-```
-
 To send a selection in visual mode to vim, set the following in your `.vimrc`:
 
 ``` vim
-vmap <your_key_combo> <Plug>SendSelectionToTmux
+xmap <your_key_combo> <Plug>(TslimeSendSelection)
 ```
 
-To grab the current method that a cursor is in normal mode, set the following:
-
-``` vim
-nmap <your_key_combo> <Plug>NormalModeSendToTmux
-```
-
-To send any text object or motion to tmux from normal mode, set the following:
+To send any text object or motion to tmux in normal mode:
 
 ```vim
-nmap <your_key_combo> <Plug>TslimeOperator
+nmap <your_key_combo> <Plug>(TslimeOperator)
 ```
 
-Use the following to reset the session, window, and pane info:
+Commands
+--------
 
-``` vim
-nmap <your_key_combo> <Plug>SetTmuxVars
-```
-
-Have a command you run frequently, use this:
-
-``` vim
-nmap <your_key_combo> :Tmux <your_command><CR>
-```
-
-More info about the `<Plug>` and other mapping syntax can be found
-[here](http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_3\) ).
+- `:TslimeChooseTarget` - Choose a new session/window/pane to send text to.
+- `:TslimeSend` - Send the current buffer in its entirety to tmux. Also accepts
+  a range of lines.
