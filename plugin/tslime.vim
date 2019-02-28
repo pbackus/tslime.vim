@@ -137,4 +137,4 @@ endfunction
 xnoremap <silent> <Plug>(TslimeSendSelection) "ry :call Send_to_Tmux(@r)<CR>
 nnoremap <silent> <Plug>(TslimeOperator) :set operatorfunc=<SID>TslimeOperator<CR>g@
 command! -range=% TslimeSend <line1>,<line2>call <SID>SendRange()
-command! TslimeSetTarget call <SID>Tmux_Vars()
+command! TslimeChooseTarget call <SID>Tmux_Vars()

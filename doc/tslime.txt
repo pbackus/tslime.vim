@@ -7,9 +7,9 @@ running tmux session. It can be used to communicate with a shell, interactive
 interpreter, or REPL.
 
 Before sending text to tmux for the first time, you will be prompted to select
-a target session, window, and pane. From then on, all text sent to tmux will go
-to that target automatically. You can use the |:TslimeSetTarget| command to
-select a new target.
+a target session, window, and pane. From then on, all text sent to tmux will
+go to that target automatically. You can use the |:TslimeChooseTarget| command
+to select a new target.
 
 MAPPINGS                                                *tslime-mappings*
 
@@ -35,8 +35,8 @@ COMMANDS                                                *tslime-commands*
                                                         *:TslimeSend:*
 :[range]TslimeSend      Send the current buffer to tmux. With [range], send
                         only the specified lines.
-                                                        *:TslimeSetTarget*
-:TslimeSetTarget        Prompts for a new target session, window, and pane.
+                                                        *:TslimeChooseTarget*
+:TslimeChooseTarget     Prompts for a new target session, window, and pane.
 
 OPTIONS                                                 *tslime-options*
 
