@@ -1,5 +1,5 @@
 " Tslime.vim. Send portion of buffer to tmux instance
-" Maintainer: C.Coutinho <kikijump [at] gmail [dot] com>
+" Maintainer: Paul Backus <snarwin [at] gmail [dot] com>
 " Licence:    DWTFYWTPL
 
 if exists("g:loaded_tslime") && g:loaded_tslime
