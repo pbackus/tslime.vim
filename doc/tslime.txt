@@ -32,6 +32,9 @@ the following mappings: >
 
 COMMANDS                                                *tslime-commands*
 
+                                                        *:TslimeSend:*
+:[range]TslimeSend      Send the current buffer to tmux. With [range], send
+                        only the specified lines.
                                                         *:TslimeSetTarget*
 :TslimeSetTarget        Prompts for a new target session, window, and pane.
 

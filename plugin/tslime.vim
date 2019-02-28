@@ -129,7 +129,12 @@ function! s:TslimeOperator(motion_type)
   let @@ = reg_save
 endfunction
 
+function! s:SendRange() range
+  let lines = join(getline(a:firstline, a:lastline), "\n") . "\n"
+  call Send_to_Tmux(lines)
+endfunction
+
 xnoremap <silent> <Plug>(TslimeSendSelection) "ry :call Send_to_Tmux(@r)<CR>
 nnoremap <silent> <Plug>(TslimeOperator) :set operatorfunc=<SID>TslimeOperator<CR>g@
-
+command! -range=% TslimeSend <line1>,<line2>call <SID>SendRange()
 command! TslimeSetTarget call <SID>Tmux_Vars()
